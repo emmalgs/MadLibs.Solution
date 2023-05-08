@@ -6,13 +6,16 @@ namespace MadLibs.Controllers
   public class HomeController : Controller
   {
     [Route("/")]
-    public ActionResult Form() { return View(); }
-    [Route("/story")]
-    public ActionResult Story(string noun, string adjective, string noun) 
+    public ActionResult Form(string action) { return View(); }
+
+    [Route("/punch")]
+    public ActionResult Story(params string[] inputs) 
     {
       StoryVariable newStory = new StoryVariable();
-      newStory.Noun = noun;
-      newStory.Adjective = adjective;
+      foreach (string input in inputs)
+      {
+        newStory.StoryList.Add(input);
+      }
       return View(newStory);
     }
   }

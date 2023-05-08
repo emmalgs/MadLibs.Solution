@@ -7,10 +7,10 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <meta charset='utf-8'>
 </head>
-
+@using MadLibs.Models;
 <body>
   <h1>Fill out the MadLib to learn about Punch's crazy day!</h1>
-  <form action="/story" method="post">
+  <form action="/@StoryVariable.Madlib" method="post">
     <label for="noun">Something to eat:</label>
     <input id="noun" name="inputs" type="text">
     <label for="adjective">Adjective</label>
@@ -37,4 +37,4 @@
   </form>
 </body>
 
-</html>
+</html> 

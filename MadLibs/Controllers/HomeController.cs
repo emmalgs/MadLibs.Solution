@@ -9,12 +9,12 @@ namespace MadLibs.Controllers
     public ActionResult Form(string action) { return View(); }
 
     [Route("/punch")]
-    public ActionResult Story(params string[] inputs) 
+    public ActionResult Story(string[] inputs, string [] id) 
     {
       StoryVariable newStory = new StoryVariable();
-      foreach (string input in inputs)
+      for (int i = 0; i < inputs.Length; i ++)
       {
-        newStory.StoryList.Add(input);
+        newStory.StoryDict.Add(id[i], inputs[i]);
       }
       return View(newStory);
     }

@@ -5,6 +5,6 @@ namespace MadLibs.Models
 {
   public class StoryVariable
   {
-    public List<string> StoryList { get; set; } = new List<string> () {};
+    public Dictionary<string, string> StoryDict { get; set; } = new Dictionary<string, string> () {};
   }
 }
